@@ -116,3 +116,33 @@ Matching approach notes:
 
 Usage: python3 match_rpbbi_fsc.py rpbbi_extracted.csv fsc_indonesia_all.csv fsc_indonesia_details_fm.csv -o rpbbi_fsc_matches.csv
 
+=== Session: 2026-03-24 (3) ===
+Summary:
+- Added volume-based FSC sourcing analysis to rpbbi_extracted.csv
+- rencana_m3 column = planned annual volume per supplier — enables % FSC calculation
+- Added 7 per-company summary columns to every row for easy filtering/pivoting
+
+Key finding from 10 sample PDFs (7 FSC COC-certified mills):
+- Only 35.6% of concession timber volume sourced by COC mills is from FSC concessions
+- 3 of 6 COC mills sourcing from concessions get <50% from FSC sources
+- All 6 source some non-FSC concession timber (none are 100% FSC-sourced)
+- 1 COC mill (INDOTAMA OMICRON KAHAR) sources only from community timber, not concessions
+
+Per-company breakdown:
+  KAYU MULTIGUNA INDONESIA      83.8% FSC concession sourcing
+  KUTAI TIMBER INDONESIA         58.1%
+  SURYA SARITAMA                 53.0%
+  KHARISMA JAYA GEMILANG         30.3%
+  SUMBER MAS INDAH PLYWOOD       17.9%
+  SETIA INDO PUTRA                4.9%
+
+New CSV columns added:
+- total_sourcing_m3, concession_total_m3, concession_fsc_m3, concession_nonfsc_m3
+- other_sourcing_m3, pct_concession_from_fsc, pct_total_from_fsc_concessions
+
+Caveats:
+- Volumes are "Rencana" (planned), not necessarily realized
+- Low-confidence FSC matches excluded from "Yes" (shown as "No (low match)")
+- Some concessions may hold FSC certs under slightly different names not caught by matching
+- Community timber (hutan_rakyat_budidaya) is a large volume category not FSC-matchable
+
