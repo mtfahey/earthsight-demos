@@ -1,0 +1,86 @@
+=== Session: 2026-03-18 ===
+Summary:
+- Investigated downloading all RPBBI (Rencana Pemenuhan Bahan Baku Industri) plans for 2024 from the Indonesian Ministry of Environment and Forestry (KLHK)
+- Explored the RPBBI website (rpbbi.phl.kehutanan.go.id) - an ASP.NET WebForms application
+- Found that the public-facing pages only expose province-level aggregate data, not individual company RPBBI plans
+- Successfully used Selenium + Chrome headless to interact with the site (curl worked for GET, but ASP.NET postbacks required browser automation)
+- Counted 1,638 total RPBBI plans for 2024: 452 companies >6,000 m3/year + 1,186 companies <=6,000 m3/year
+- Individual company RPBBI documents are behind a login wall (/sd6000/Rencana/ path requires authentication)
+- Key finding: RPBBI plans for >6,000 m3/year are classified as public information under Indonesian law (PPID KLHK)
+- Earthsight/Auriga obtained ~10,000 RPBBI documents in 2024 for their "Risky Business" investigation; samples available on request
+
+Key URLs discovered:
+- Public national recap: /asp/RekapRencanaPemenuhanNasionalPerPropinsi.asp?Tahun=2024
+- Public usage data: /asp/EvalRcManfaatPrimerUmum.asp?Tahun=2024
+- Export to Excel: append &export=1 to above URLs
+- Login-protected company data: /sd6000/Rencana/default.aspx
+
+Tools/dependencies used:
+- Selenium 4.35.0 with webdriver-manager (for Chrome 146 compatibility)
+- curl with --tlsv1.2 --ciphers AES128-SHA (site uses legacy TLS)
+
+Next steps:
+- Option A: Submit PPID public information request to KLHK for individual RPBBI plans
+- Option B: Obtain credentials to access the login-protected company-level data
+- Option C: Explore SILK (silk.menlhk.go.id) for overlapping company data
+- Option D: Contact Earthsight/Auriga for their existing dataset
+
+=== Session: 2026-03-18 (2) ===
+Summary:
+- Built a script to fetch all FSC-certified certificates for Indonesia from search.fsc.org
+- Reverse-engineered the FSC search API (Next.js frontend backed by ASP.NET API)
+- Discovered the API uses XSRF token rotation and has a 500-result hard cap per GET query
+- GET requests fail with 401 for certificate types containing slashes (FM/COC, CW/FM) due to URL encoding
+- Solved both issues by using Playwright to make POST requests via the browser context, which:
+  - Handles auth/XSRF automatically
+  - Passes filter values (including slashes) in JSON body instead of URL params
+  - Still has 500-result cap, but splitting by status + certification body gets full coverage
+- Final results: 1,535/1,543 total certificates (99.5%), 259/259 FM-related (100% complete)
+
+Key files created:
+- fetch_fsc_indonesia.py — Playwright-based script to pull all FSC Indonesia data
+
+Output files (regenerated on each run):
+- fsc_indonesia_all.csv — 1,535 certificates (all types: COC, FM, FM/COC, CW/FM)
+- fsc_indonesia_fm.csv — 259 FM-related certificates (91 certificate holders + 161 sites)
+- fsc_indonesia_details_fm.csv — 259 FM entries with full details (area, dates, addresses)
+
+FM data highlights:
+- 192 valid, 67 terminated
+- Major concessions: Perum Perhutani (1.3M ha), PT RAPP/Riaufiber (350K ha),
+  PT Bina Balantak Utama (295K ha), PT Sumalindo (268K ha), PT Sarmiento (207K ha)
+
+Technical notes:
+- Requires python3.9 with playwright and chromium: pip3 install playwright && python3.9 -m playwright install chromium
+- FSC search API endpoints: POST /api/v1/Certification/Search?certificateUri=false (with Content-Type: application/json-patch+json)
+- Detail endpoints: GET /api/v1/Certification/Details/{id}/Header, .../Address, .../Documents
+- 8 COC certificates missing due to certification bodies not listed in the filter endpoint
+
+=== Session: 2026-03-24 ===
+Summary:
+- Built a PDF extraction pipeline (extract_rpbbi.py) for RPBBI documents
+- Extracts company names (PBPHH), concession/supplier names, provinces, and volumes
+- Uses pdfplumber table extraction with "text" horizontal strategy to properly separate columns
+- Handles multi-line company names and province names that wrap across rows
+- Sections I (opening stock) excluded; sections II-XVII extracted
+- Tested on 10 sample PDFs: 210 supplier entries, 10 companies, 100% province coverage
+
+Key files:
+- extract_rpbbi.py — PDF extraction script (pdfplumber-based)
+- rpbbi_extracted.csv — output from 10 sample PDFs (210 entries)
+- RPBBI sample/ — 10 sample RPBBI PDFs
+
+Technical notes:
+- PDFs are generated from the RPBBI system (not scanned), so text extraction works well
+- Table extraction settings: vertical_strategy="lines", horizontal_strategy="text"
+- Key challenge: ASP.NET-generated PDFs have multi-line cells where company names and
+  province names wrap to continuation rows with empty col0/col1 but populated col2
+- Section XVI has sub-sections (a/b/c) for different material types
+
+Output CSV columns:
+- filename, pbphh_company, pbphh_location, report_year, report_month
+- section_id, section_category, section_description
+- entry_number, entry_name, province, rencana_m3
+
+Usage: python3 extract_rpbbi.py "RPBBI sample/" -o rpbbi_extracted.csv -v
+
