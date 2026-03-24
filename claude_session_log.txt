@@ -84,3 +84,35 @@ Output CSV columns:
 
 Usage: python3 extract_rpbbi.py "RPBBI sample/" -o rpbbi_extracted.csv -v
 
+=== Session: 2026-03-24 (2) ===
+Summary:
+- Built match_rpbbi_fsc.py to cross-reference RPBBI companies/concessions against FSC certification
+- Uses IDF-weighted Jaccard similarity to handle common Indonesian business words
+  (JAYA, LESTARI, UTAMA, INDONESIA etc. appear in 20-70 FSC orgs each — naive matching fails)
+- Two match types: PBPHH mills -> FSC COC certificates, Concessions -> FSC FM certificates
+- Province cross-checking as secondary signal (boost/downgrade confidence)
+- Confidence tiers: high (auto-trust), medium (quick review), low (likely false positive)
+- Enriched rpbbi_extracted.csv with 8 new FSC columns (4 for mill, 4 for supplier)
+
+Results from 10 sample PDFs:
+- Mills: 7/10 FSC-certified (all high confidence, all Valid status)
+- Concessions: 12/81 FSC-certified at high/medium confidence
+  - Most concessions are NOT FSC certified (consistent with Earthsight findings)
+- Low-confidence matches flagged separately (most are false positives from common words)
+
+Key files:
+- match_rpbbi_fsc.py — matching script (IDF-weighted fuzzy name matching)
+- rpbbi_fsc_matches.csv — detailed match results with scores
+- rpbbi_extracted.csv — now includes FSC columns:
+  pbphh_fsc_certified, pbphh_fsc_confidence, pbphh_fsc_status, pbphh_fsc_license,
+  supplier_fsc_certified, supplier_fsc_confidence, supplier_fsc_status, supplier_fsc_license
+
+Matching approach notes:
+- Normalizes names: strips PT/CV/UD, removes parenthetical notes, uppercases
+- IDF weighting: rare/distinctive tokens (company-specific words) weighted higher
+- Requires at least 1 distinctive token overlap for high confidence
+- Province matching: boosts medium->high if provinces match, downgrades if mismatch
+- Low-confidence matches shown as "No (low match)" in the CSV
+
+Usage: python3 match_rpbbi_fsc.py rpbbi_extracted.csv fsc_indonesia_all.csv fsc_indonesia_details_fm.csv -o rpbbi_fsc_matches.csv
+

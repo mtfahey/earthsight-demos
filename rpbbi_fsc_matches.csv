@@ -1,0 +1,71 @@
+match_type,rpbbi_name,rpbbi_location,fsc_name,fsc_cert_type,fsc_status,fsc_license,fsc_cert_code,fsc_role,score,distinctive_tokens,confidence,province_match
+mill_to_coc,"INDOTAMA OMICRON KAHAR, PT.","Kabupaten/Kota Purworejo, Provinsi Jawa Tengah",PT Indotama Omicron Kahar,COC,Valid,FSC-C161044,SCS-COC-007636,Certificate holder,1.000,3,high,
+mill_to_coc,"KUTAI TIMBER INDONESIA, PT.","Kabupaten/Kota Probolinggo, Provinsi Jawa Timur",PT Kutai Timber Indonesia,COC,Valid,FSC-C013800,SA-COC-012758,Certificate holder,1.000,1,high,
+mill_to_coc,"SUMBER MAS INDAH PLYWOOD (Gresik), PT.","Kabupaten/Kota Gresik, Provinsi Jawa Timur",PT Sumber Mas Indah Plywood,COC,Valid,FSC-C108040,SA-COC-012400,Certificate holder,1.000,2,high,
+mill_to_coc,"SUMBER MAS INDAH PLYWOOD (Gresik), PT.","Kabupaten/Kota Gresik, Provinsi Jawa Timur",PT. Sumber Mas Indah Plywood,COC,Terminated,FSC-C010999,CU-COC-810738,Certificate holder,1.000,2,high,
+mill_to_coc,"KHARISMA JAYA GEMILANG, PT","Kabupaten/Kota Semarang, Provinsi Jawa Tengah",PT Kharisma Jaya Gemilang,COC,Valid,FSC-C104967,PBN-COC-005407,Certificate holder,1.000,2,high,
+mill_to_coc,"DHARMA PUTRA KALIMANTAN SEJATI, PT","Kabupaten/Kota Barito Kuala, Provinsi Kalimantan Selatan",(no match),,,,,,,,none,
+mill_to_coc,"SURYA SARITAMA, PT","Kabupaten/Kota Surabaya, Provinsi Jawa Timur",PT. SURYA SARITAMA,COC,Valid,FSC-C003174,SA-COC-012981,Certificate holder,1.000,1,high,
+mill_to_coc,"KAYU MULTIGUNA INDONESIA, PT","Kabupaten/Kota Surabaya, Provinsi Jawa Timur",PT Kayu Multiguna Indonesia,COC,Valid,FSC-C002863,PBN-COC-004051,Certificate holder,1.000,1,high,
+mill_to_coc,"SETIA INDO PUTRA, PT","Kabupaten/Kota Semarang, Provinsi Jawa Tengah",PT Setia Indo Putra,COC,Valid,FSC-C202067,SA-COC-014883,Certificate holder,1.000,2,high,
+mill_to_coc,"JIUDA SENLIN INDONESIA, PT","Kabupaten/Kota Demak, Provinsi Jawa Tengah",(no match),,,,,,,,none,
+mill_to_coc,"KARYA SUKSES MANDIRI, CV","Kabupaten/Kota Gresik, Provinsi Jawa Timur",PT KARYA PUTRA SUKSES,COC,Valid,FSC-C200035,SCS-COC-702351,Certificate holder,0.500,1,low,
+concession_to_fm,"DUADJA CORP II, PT",Kalimantan Barat,(no match),,,,,,,,none,
+concession_to_fm,"GEMA HUTANI LESTARI, PT",Maluku,PT Gema Hutani Lestari,FM/COC,Valid,FSC-C114373,SA-FM/COC-004224,Certificate holder,1.000,2,high,unknown
+concession_to_fm,"GUNUNG GAJAH ABADI, PT",Kalimantan Timur,PT. Gunung Gajah Abadi,FM/COC,Valid,FSC-C112585,PBN-FM/COC-007344,Certificate holder,1.000,2,high,yes
+concession_to_fm,"HUTANINDO LESTARI RAYA TIMBER, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"INHUTANI I, PT (UNIT SAMBARATA)",Kalimantan Timur,(no match),,,,,,,,none,
+concession_to_fm,"INHUTANI I, PT - UNIT KUNYIT-SIMENDURUT",Kalimantan Utara,(no match),,,,,,,,none,
+concession_to_fm,"KARDA TRADERS, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"KARYA LESTARI, PT.",Kalimantan Timur,PT Karya Lestari,FM/COC,Valid,FSC-C131938,SA-FM/COC-006160,Certificate holder,1.000,0,high,yes
+concession_to_fm,"KARYA LESTARI, PT.",Kalimantan Timur,KTH Karya Tani,FM/COC,Valid,FSC-C162208,SA-FM/COC-008524,Site,0.441,0,low,no
+concession_to_fm,"KARYA LESTARI, PT.",Kalimantan Timur,KTH Tani Karya,FM/COC,Valid,FSC-C162208,SA-FM/COC-008524,Site,0.441,0,low,no
+concession_to_fm,KSU. MERANTI TUMBUH INDAH,Kalimantan Utara,(no match),,,,,,,,none,
+concession_to_fm,"PANCA KARYA, PD",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"UTAMA DAMAI INDAH TIMBER, PT.",Kalimantan Timur,PT Utama Damai Indah Timber,FM/COC,Valid,FSC-C131939,SA-FM/COC-005807,Certificate holder,1.000,1,high,yes
+concession_to_fm,"Waenibe Wood Industries, PT (HA)",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"WAILA WANA LESTARI, KOP.",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"WANA POTENSI NUSA, PT",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"BERKAT CAHAYA TIMBER, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"CAKRA SEJATI SEMPURNA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"CARUS INDONESIA, PT",Kalimantan Tengah,PT Carus Indonesia,FM/COC,Terminated,FSC-C122684,SCS-FM/COC-005030,Certificate holder,1.000,1,high,unknown
+concession_to_fm,"DWIMA JAYA UTAMA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"FITAMAYA ASMAPARA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"GRAHA SENTOSA ABADI, PT",Kalimantan Tengah,PT Graha Sentosa Permai,FM/COC,Valid,FSC-C118412,CU-FM/COC-829036,Certificate holder,0.500,2,low,unknown
+concession_to_fm,"HANURATA COY LTD, PT (UNIT SANGKULIRANG)",Kalimantan Timur,(no match),,,,,,,,none,
+concession_to_fm,"HUTAN DOMAS RAYA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"HUTAN MULYA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"KAYU WAJA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"MAHKOTA RIMBA UTAMA, PT",Kalimantan Barat,(no match),,,,,,,,none,
+concession_to_fm,"MERANTI SAKTI INDONESIA, PT",Kalimantan Utara,(no match),,,,,,,,none,
+concession_to_fm,"RIMBA MAKMUR SENTOSA, PT (Kaltara)",Kalimantan Utara,(no match),,,,,,,,none,
+concession_to_fm,"SAMUDERA REJEKI PERKASA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"SARANA PIRANTI UTAMA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"SIKATAN WANA RAYA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"SILVA SELARAS UTAMA, PT",Kalimantan Timur,(no match),,,,,,,,none,
+concession_to_fm,"SUMALINDO LESTARI JAYA IV, PT",Kalimantan Timur,PT Sumalindo Lestari Jaya IV,CW/FM,Terminated,FSC-C134794,SGS-CW/FM-010986,Certificate holder,1.000,1,high,unknown
+concession_to_fm,"SUMALINDO LESTARI JAYA IV, PT",Kalimantan Timur,PT Sumalindo Lestari Jaya Tbk,FM/COC,Terminated,FSC-C013237,SW-FM/COC-001735,Certificate holder,0.650,1,medium,unknown
+concession_to_fm,"WIJAYA KENCANA INDONESIA, PT",Maluku Utara,(no match),,,,,,,,none,
+concession_to_fm,"BARITO PUTERA, PT",Kalimantan Tengah,UD Barito,FM/COC,Terminated,FSC-C203459,CU-FM/COC-903058,Certificate holder,0.500,1,low,no
+concession_to_fm,"BINA MULTI ALAM LESTARI, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"GRAHA SENTOSA PERMAI, PT",Kalimantan Tengah,PT Graha Sentosa Permai,FM/COC,Valid,FSC-C118412,CU-FM/COC-829036,Certificate holder,1.000,3,high,unknown
+concession_to_fm,"GUNUNG MURO WAHANAJAYA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"INDEXIM UTAMA CORP., PT",Kalimantan Tengah,PT. Indexim Utama,FM/COC,Valid,FSC-C116852,SGSCH-FM/COC-009890,Certificate holder,0.622,1,high,yes
+concession_to_fm,"KAHAYAN TERANG ABADI, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"PANDU JAYA GEMILANG AGUNG, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"RIZKI KACIDA REANA, PT",Kalimantan Timur,PT Rizki Kacida Reana,FM/COC,Valid,FSC-C129145,SA-FM/COC-006178,Certificate holder,1.000,3,low,no
+concession_to_fm,"SINDO LUMBER, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"WANA INTI KAHURIPAN INTIGA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"TANJUNG REDEB HUTANI, PT (Penyiapan Lahan pada Areal HA Bekas Tebangan)",Kalimantan Timur,(no match),,,,,,,,none,
+concession_to_fm,"ADIMITRA LESTARI, PT",Kalimantan Utara,(no match),,,,,,,,none,
+concession_to_fm,"DASA INTIGA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"KARYA JAYA BERDIKARI, PT",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"NUSAPADMA CORPORATION, PT (Prov. Maluku)",Maluku,(no match),,,,,,,,none,
+concession_to_fm,"BINA SARANA SAWIT UTAMA, PT (PKKNK)",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"GRAHA EQUITY INVESTMENT, PT (IPPKH di Kab Kapuas)",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"AGRO BORNEO LESTARI, PT (LC Penyiapan Lahan HTI)",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"INDUSTRIAL FOREST PLANTATION, PT {LC Penyiapan HTI)",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"GAUNG SATYA GRAHA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"KAYU TRIBUANA RAMA, PT",Kalimantan Tengah,(no match),,,,,,,,none,
+concession_to_fm,"SUKA JAYA MAKMUR, PT",Kalimantan Barat,PT Suka Jaya Makmur,FM/COC,Valid,FSC-C102305,CU-FM/COC-812699,Certificate holder,1.000,1,high,unknown
+concession_to_fm,"PANAMBANGAN, PT (THPB - LOA)",Kalimantan Timur,(no match),,,,,,,,none,
