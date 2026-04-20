@@ -146,3 +146,20 @@ Caveats:
 - Some concessions may hold FSC certs under slightly different names not caught by matching
 - Community timber (hutan_rakyat_budidaya) is a large volume category not FSC-matchable
 
+=== Session: 2026-04-19 ===
+Summary:
+- Published the repo publicly at https://github.com/mtfahey/earthsight-demos for tomorrow's demo
+- Scrubbed "RPBBI sample/" PDFs from full git history via git-filter-repo (not just HEAD)
+  — PDFs are Earthsight/Auriga "Risky Business" samples, available on request only,
+    so not suitable for public distribution
+- Restored PDFs locally from wetransfer_rpbbi-sample_2026-03-24_1645.zip (gitignored)
+- Added "RPBBI sample/" to .gitignore
+- Force-pushed cleaned history (4 commits, 0 PDFs in history)
+- Flipped repo visibility to public via gh CLI
+- Added README.md covering all 4 pipeline components with usage examples + sample results
+- Safety backup tag retained locally: backup-before-scrub-20260419-201422
+
+Final deliverable clarified:
+- rpbbi_extracted.csv is the headline output (27 columns: extraction + FSC join + volume analysis)
+- rpbbi_fsc_matches.csv is the audit companion (match scores, distinctive tokens, province checks)
+
